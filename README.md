@@ -1,11 +1,17 @@
-# blanchisseur
-REQUIRE ESSENTIALMODE
+# esx_cashwash (English fork of https://github.com/MysticRP/blanchisseur)
 
+### Requirements
+* [EssentialMode](https://github.com/kanersps/essentialmode/releases)
 
-Updated to 0.2
+## Download & Installation
 
-Changelog: 
+### Manually
+- Download https://github.com/bh-hub/blanchisseur/archive/master.zip
+- Put it in the `[esx]` directory.
 
-- You can show/disabled Blip on Map
-- Bugs Fixed
-- Customs Vars
+## Installation
+- Add this in your server.cfg :
+
+```
+start esx_cashwash
+```
