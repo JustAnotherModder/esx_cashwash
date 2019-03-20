@@ -10,6 +10,7 @@
 - Put it in the `[esx]` directory.
 
 ## Installation
+- Import `esx_cashwash.sql` into your database.
 - Add this in your server.cfg :
 
 ```
