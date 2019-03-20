@@ -1,4 +1,7 @@
-local showBlip = true -- Show blip on map.
+ESX = nil
+
+local PlayerData = {}
+local showBlip = false -- Show blip on map.
 local maxDirty = 100000 -- Max dirty money per laundry cycle.
 local openKey = 51 -- Press [E] to open menu.
 
@@ -19,6 +22,20 @@ local options = {
     color_g = 10, 
     color_b = 20,  
 }
+
+Citizen.CreateThread(function()
+	while ESX == nil do
+		TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
+		Citizen.Wait(0)
+	end
+
+	PlayerData = ESX.GetPlayerData()
+end)
+
+RegisterNetEvent('esx:playerLoaded')
+AddEventHandler('esx:playerLoaded', function(xPlayer)
+	PlayerData = xPlayer
+end)
 
 -- Show blip
 Citizen.CreateThread(function()
@@ -47,7 +64,7 @@ Citizen.CreateThread(
 			local playerPos = GetEntityCoords(GetPlayerPed(-1), true)
 			if (Vdist(playerPos.x, playerPos.y, playerPos.z, x, y, z) < 100.0) then
 				DrawMarker(0, x, y, z - 1, 0, 0, 0, 0, 0, 0, 1.0001, 1.0001, 1.0001, 255, 10, 10,165, 0, 0, 0,0)
-				if (Vdist(playerPos.x, playerPos.y, playerPos.z, x, y, z) < 4.0) then						
+				if (Vdist(playerPos.x, playerPos.y, playerPos.z, x, y, z) < 4.0) and (PlayerData.job.name == 'launderer') then						
 					DisplayHelpText('Press ~INPUT_CONTEXT~ to launder your dirty money.')
 					if (IsControlJustReleased(1, openKey)) then 
 						LaundryMenu()
@@ -55,7 +72,6 @@ Citizen.CreateThread(
 					end
 					Menu.renderGUI(options) 
 				end
-
 			end
 		end
 end)

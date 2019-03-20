@@ -1,4 +1,4 @@
-# esx_cashwash
+# esx_cashwash (English fork of https://github.com/MysticRP/blanchisseur)
 
 ### Requirements
 * [EssentialMode](https://github.com/kanersps/essentialmode/releases)
@@ -15,7 +15,3 @@
 ```
 start esx_cashwash
 ```
-
-## Credits
-- All credits to : https://github.com/MysticRP/blanchisseur
-- This is simply an English conversion, renamed for easy finding.
