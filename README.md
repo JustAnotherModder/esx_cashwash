@@ -2,6 +2,7 @@
 
 ### Requirements
 * [EssentialMode](https://github.com/kanersps/essentialmode/releases)
+* [esx_jobs](https://github.com/ESX-Org/esx_jobs)
 
 ## Download & Installation
 
