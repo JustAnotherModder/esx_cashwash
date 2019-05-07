@@ -1,3 +1,5 @@
+- Archived. No longer supported.
+
 # esx_cashwash (English fork of https://github.com/MysticRP/blanchisseur)
 
 ### Requirements
